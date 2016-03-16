@@ -24,7 +24,16 @@ class PyXML:
             self.logs.update({"ERROR": "Make sure the filepath is valid"})
     
     def UpdateLog(self, key, value):
-        self.logs.update({key: value})
+        """
+            Updates the log dictionary using the "update" method.
+        """
+        if key and value:
+            self.logs.update({key: value})
+        else:
+            self.logs.update({"ERROR": "Invalid key or value."})
 
     def GetLog(self):
+        """
+            Returns the log dictionary
+        """
         return self.logs
